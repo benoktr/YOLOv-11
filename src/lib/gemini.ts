@@ -75,7 +75,12 @@ If no plants or diseases are found, return an empty array. Do not include markdo
     const output = response.text;
     if (!output) return [];
 
-    const parsed = JSON.parse(output.trim());
+    let cleanOutput = output.trim();
+    if (cleanOutput.startsWith('```')) {
+       cleanOutput = cleanOutput.replace(/```(?:\w+)?/g, '').trim();
+    }
+
+    const parsed = JSON.parse(cleanOutput);
     return parsed as DetectionResult[];
   } catch (error) {
     console.error('YOLOv11 Inference Simulation Error:', error);
