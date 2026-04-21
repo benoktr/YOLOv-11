@@ -53,9 +53,9 @@ export default function Dashboard() {
     try {
       const results = await detectDiseases(base64String, mimeType);
       setDetections(results);
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
-      setError("Inference failed. Ensure API keys are valid or try another image.");
+      setError(`Inference failed: ${err.message || 'Unknown error'}`);
     } finally {
       const end = performance.now();
       setInferenceTime(end - start);

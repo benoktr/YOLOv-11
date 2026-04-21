@@ -82,8 +82,8 @@ If no plants or diseases are found, return an empty array. Do not include markdo
 
     const parsed = JSON.parse(cleanOutput);
     return parsed as DetectionResult[];
-  } catch (error) {
+  } catch (error: any) {
     console.error('YOLOv11 Inference Simulation Error:', error);
-    throw new Error('Failed to run inference.');
+    throw new Error(error?.message || 'Unknown inference error');
   }
 }
