@@ -1,1 +1,1 @@
- Run the app : yolov-11.vercel.app
+ Run the app :https://yolov-11.vercel.app/
