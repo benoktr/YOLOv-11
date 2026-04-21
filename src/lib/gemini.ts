@@ -14,7 +14,7 @@ export interface DetectionResult {
 export async function detectDiseases(base64Image: string, mimeType: string): Promise<DetectionResult[]> {
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-3.1-pro-preview', // High reasoning capability, good for object detection bounding boxes
+      model: 'gemini-3-flash-preview', // Switch to Flash model for higher free-tier rate limits and speed
       contents: {
         parts: [
           {
