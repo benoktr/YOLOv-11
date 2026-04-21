@@ -1,1 +1,1 @@
- Run the app : 
+ Run the app : yolov-11.vercel.app
